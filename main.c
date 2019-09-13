@@ -14,84 +14,45 @@ Matricula: 1986172
 */
 
 int main(int argc, char *argv[]) {
-	float nota=0;
-	int cve=0, x=0; 
-	printf("\nIngrese la nota de la materia del estudiante\n");
-	scanf("%f",&nota);
-	if(nota>=5&&nota<=10){
-		printf("\nAPTO\n");
-		}
-		if(nota>=0&&nota<5){
-			printf("\nNo Apto\n");
-		}
-		if(nota<0||nota>10){
-			printf("\nERROR\n");
-		}
-		
-		
+			/*****************ACTIVIDAD 1***********************/
+
+	int x=0, z=0, w=0;
+	do
+	{
+		printf("\nIngrese un numero entero\n");
+		scanf("%d",&x);
+		printf("\nDesea continuar? ingrese 1 si desea y 2 si no lo desea\n");
+        scanf("%d",&z);
+		w=w+x;
+    }while (z==1);
+	printf("\nLa suma de los introducidos es %d \n",w);
 	
 	
-	
-	/*********************************************************************************************/
-	printf("\nActividad 2\n");
-	printf("\nIngrese un numero del 1 al 7\n");
-	scanf("%d",&x);
-	switch(x){
-		case 1: (x=1);
-		printf("\nEl dia es Lunes\n");
-		break;
-		case 2: (x=2);
-		printf("\nEl dia es Martes\n");
-		break;
-		case 3: (x=3);
-		printf("\nEl dia es Miercoles\n");
-		break;
-		case 4: (x=4);
-		printf("\nEl dia es Jueves\n");
-		break;
-		case 5: (x=5);
-		printf("\nEl dia es Viernes\n");
-		break;
-		case 6: (x=6);
-		printf("\nEl dia es Sabado\n");
-		break;
-		case 7: (x=7);
-		printf("\nEl dia es Domingo\n");
-		break;
-		default: printf("\nNumero no esta en el rango de 1-7\n");
-		printf("\nEl dia es Martes\n");		
+	/***************************ACVTIVIDAD 2**************/
+
+int a=0;
+printf("\nActivad 2\n");
+printf("\nDo While\n");
+do{
+	printf("\nIngrese un numero\n");
+	scanf("%d",&a);
+	if(a<=100){
+	printf("\nEl numero introducido es: %d\n",a);
 	}
-	
-	/*********************************************************************************************/
-	
-	printf("\nACTIVIDAD EXTRA\n");
-	printf("\nMenu de Restaurant\n");
-	printf("\nElija uno de los siguientes platillos\n");
-	printf("\nPizza= 1\n");
-	printf("\nHamburguesa= 2\n");
-	printf("\nPizzaDog= 3\n");
-	printf("\nSushi= 4\n");
-	printf("\nTacos= 5\n");
-	scanf("%d",&cve);
-	switch(cve){
-		case 1: (cve=1);
-		printf("\nUstes escogio pizza\n");
-		break;
-		case 2: (cve=2);
-		printf("\nUstes escogio Hamburguesa\n");
-		break;
-		case 3: (cve=3);
-		printf("\nUstes escogio PizzaDog\n");
-		break;
-		case 4: (cve=4);
-		printf("\nUstes escogio Sushi\n");
-		break;
-		case 5: (cve=5);
-		printf("\nUstes escogio Tacos\n");
-		break;
-		default: printf("\El numero no esta en el rango de 1-5\n");
+}while (a<100);
+
+/************************Actividad Extra**********/
+int b=0;
+printf("\nWhile\n");
+while (b<=100){
+	printf("\nIngrese un numero\n");
+	scanf("%d",&b);
+	if(b<=100){
+	printf("\nEl numero introducido es: %d\n",b);
 	}
-	
-	
-	return 0;
 }
+getch();
+return 0;
+}
+
+
