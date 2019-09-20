@@ -16,43 +16,54 @@ Matricula: 1986172
 int main(int argc, char *argv[]) {
 			/*****************ACTIVIDAD 1***********************/
 
-	int x=0, z=0, w=0;
-	do
-	{
-		printf("\nIngrese un numero entero\n");
-		scanf("%d",&x);
-		printf("\nDesea continuar? ingrese 1 si desea y 2 si no lo desea\n");
-        scanf("%d",&z);
-		w=w+x;
-    }while (z==1);
-	printf("\nLa suma de los introducidos es %d \n",w);
+	float cal=0, suma, prom;
+	int i;
+	printf("\nPRACTICA 7\n");
+	printf("\nPrograma que te dice si un alumno esta aprobado o reprobado\n");
+	for(i=1;i<=10;i++){
+		printf("\nIngrese una calificaciones entre 0-10\n");
+		printf("\nIngrese la calificaion %d ",i);
+		scanf("%f",&cal);
+		while(cal<0 || cal>10){
+			printf("\nCalificacion Invalida, ingrese su calificacion de nuevo\n");
+			scanf("%f",&cal);
+		}
+		suma=suma+cal;
+		}
+	prom=suma/10;
+	printf("\nEl promedio del alumno es: %.2f \n",prom);
+	if(prom>7){
+		printf("\nEl alumno esta APROBADO");
+		}
+		else{
+			printf("\nEl alumno esta REPROBADO\n");
+		}
+		
+	
+	/*****************ACTIVIDAD 2***********************/
+	 int base=0, potencia=0, resultado=1;
+	printf("\nActividad 2\n");
+	printf("\nPrograma que calcula la potencia de un numero\n");
+	printf("\nIngrese la base: \n");
+	scanf("%d",&base);
+	printf("\nIngrese la potencia: \n");
+	scanf("%d",&potencia);
+	
+	for(i=0;i<potencia;i++){
+
+		resultado=resultado*base;
+		
+	}
+	printf("\nEl resultado es: %d ",resultado);
 	
 	
-	/***************************ACVTIVIDAD 2**************/
-
-int a=0;
-printf("\nActivad 2\n");
-printf("\nDo While\n");
-do{
-	printf("\nIngrese un numero\n");
-	scanf("%d",&a);
-	if(a<=100){
-	printf("\nEl numero introducido es: %d\n",a);
-	}
-}while (a<100);
-
-/************************Actividad Extra**********/
-int b=0;
-printf("\nWhile\n");
-while (b<=100){
-	printf("\nIngrese un numero\n");
-	scanf("%d",&b);
-	if(b<=100){
-	printf("\nEl numero introducido es: %d\n",b);
-	}
-}
+	
 getch();
 return 0;
 }
+
+	
+	
+
 
 
