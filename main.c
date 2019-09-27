@@ -16,46 +16,31 @@ Matricula: 1986172
 int main(int argc, char *argv[]) {
 			/*****************ACTIVIDAD 1***********************/
 
-	float cal=0, suma, prom;
-	int i;
-	printf("\nPRACTICA 7\n");
-	printf("\nPrograma que te dice si un alumno esta aprobado o reprobado\n");
-	for(i=1;i<=10;i++){
-		printf("\nIngrese una calificaciones entre 0-10\n");
-		printf("\nIngrese la calificaion %d ",i);
-		scanf("%f",&cal);
-		while(cal<0 || cal>10){
-			printf("\nCalificacion Invalida, ingrese su calificacion de nuevo\n");
-			scanf("%f",&cal);
-		}
-		suma=suma+cal;
-		}
-	prom=suma/10;
-	printf("\nEl promedio del alumno es: %.2f \n",prom);
-	if(prom>7){
-		printf("\nEl alumno esta APROBADO");
-		}
-		else{
-			printf("\nEl alumno esta REPROBADO\n");
-		}
-		
-	
-	/*****************ACTIVIDAD 2***********************/
-	 int base=0, potencia=0, resultado=1;
-	printf("\nActividad 2\n");
-	printf("\nPrograma que calcula la potencia de un numero\n");
-	printf("\nIngrese la base: \n");
-	scanf("%d",&base);
-	printf("\nIngrese la potencia: \n");
-	scanf("%d",&potencia);
-	
-	for(i=0;i<potencia;i++){
+int numeroDeCoches[24]={15,2,56,53,44,26,87,96,2,4,3,9,6,7,8,10,76,18,19,20,24,23,25,27}, r, i;
+printf("ACTIVIDAD1\n");
+printf("\nnumeroDeCoches\n");
+r=2;
+numeroDeCoches[r]=57;
+printf("\nLa hora %d \n", r);
+printf("\nEl numero de coches en la hora %d fue de %d coches\n", r, numeroDeCoches[r]);
+r=21;
+numeroDeCoches[r]=57;
+printf("\nLa hora %d\n", r);
+printf("\nEl numero de coches en la hora %d fue de %d coches\n", r, numeroDeCoches[r]);
 
-		resultado=resultado*base;
-		
-	}
-	printf("\nEl resultado es: %d ",resultado);
-	
+/*****************************************ACTIVIDAD 2**************************************/
+int A=8, B=4,z;
+r=0;
+printf("\nActividad 2\n");
+printf("\nEl valor de A es 8 y el valor de B es 4\n");
+r=A/B;
+printf("\nDeterminacion de la posicion de la division A/B\n");
+z=numeroDeCoches[A/B];
+printf("\nLa posicion de A/B es: %d\n",z);
+
+
+
+
 	
 	
 getch();
