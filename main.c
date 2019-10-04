@@ -12,39 +12,40 @@ Matricula: 1986172
 
 
 */
-
-int main(int argc, char *argv[]) {
-			/*****************ACTIVIDAD 1***********************/
-
-int numeroDeCoches[24]={15,2,56,53,44,26,87,96,2,4,3,9,6,7,8,10,76,18,19,20,24,23,25,27}, r, i;
-printf("ACTIVIDAD1\n");
-printf("\nnumeroDeCoches\n");
-r=2;
-numeroDeCoches[r]=57;
-printf("\nLa hora %d \n", r);
-printf("\nEl numero de coches en la hora %d fue de %d coches\n", r, numeroDeCoches[r]);
-r=21;
-numeroDeCoches[r]=57;
-printf("\nLa hora %d\n", r);
-printf("\nEl numero de coches en la hora %d fue de %d coches\n", r, numeroDeCoches[r]);
-
-/*****************************************ACTIVIDAD 2**************************************/
-int A=8, B=4,z;
-r=0;
-printf("\nActividad 2\n");
-printf("\nEl valor de A es 8 y el valor de B es 4\n");
-r=A/B;
-printf("\nDeterminacion de la posicion de la division A/B\n");
-z=numeroDeCoches[A/B];
-printf("\nLa posicion de A/B es: %d\n",z);
-
-
-
-
+int main()
+{
+	int veoe[6][10][2];
+	int j,k,l,a,b;
+	b=10;
+	printf("\nACTIVIDAD 1\n");
+	for(j=0;j<6;j++){
 	
 	
-getch();
-return 0;
+	for(k=0;k<10;k++){
+	
+	
+	for(l=0;l<2;l++){
+		veoe[j][k][l]=b;
+	
+		}
+	 }
+	}
+	printf("\nEl empleado numero 3 de la oficina numero 7 del edificio numero 2 ha vendido: %d\n",veoe[3][7][1]);
+	a=veoe[3][7][1]=4234;
+	printf("\nCambiando el valor de la posicion 3,7,1 del arreglo\n");
+	printf("\nEl empleado numero 3 de la oficina numero 7 del edificio numero 2 ha vendido: %d\n",a);
+		
+
+
+/*********************************************ACTIVIDAD 2**********************************/
+	printf("\nACTIVIDAD 2\n");
+	int x;
+	x=veoe[3][7][1]+10;
+	printf("\nEl empleado numero 3 de la oficina 7 del edificio numero 2 ha vendido: %d\n",x);
+	printf("\nPosicion inexistente del arreglo es: %d",veoe[12][13][22]);
+	getch();
+	return 0;
+		
 }
 
 	
