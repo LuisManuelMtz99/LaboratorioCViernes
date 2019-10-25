@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/* run this program using the console pauser or add your own getch, system("pause") or input loop 
+#include <math.h>
+/*run this program using the console pauser or add your own getch, system("pause") or input loop 
 Autor:Luis Manuel Lopez Martinez
 Fecha:06/09/2019
 Grupo: 006
@@ -10,113 +11,70 @@ Matricula: 1986172
 */
 
 
-struct estudiante{
-	char nombre[40];
-	char sexo[20];
-	int edad;
-	float cal[4];
-};
 
-struct pandas{
-	char nombre[100];
-	float peso;
-	int anio;
-	char sexo[100];
-};
+void primo(int num);
+long int potencia (int base, int exponente);
 
-void leerpanda();
-int Edadpanda(int p);
-int Tenerbebes(int p);
-int a;
 
 int main(){
-	int x;
-	char y[60];
-	float p1,may=0;
-	printf("\nACTIVIDAD 1\n");
-	do{
-	struct estudiante a1;
-	printf("Nombre: ");
-	scanf("%s",a1.nombre);
-	printf("Sexo: ");
-	scanf("%s",a1.sexo);
-	printf("Edad: ");
-	scanf("%d",&a1.edad);
-	printf("Califcacion 1: ");
-	scanf("%f",&a1.cal[0]);
-	printf("Califcacion 2: ");
-	scanf("%f",&a1.cal[1]);
-	printf("Califcacion 3: ");
-	scanf("%f",&a1.cal[2]);
-	printf("Califcacion 4: ");
-	scanf("%f",&a1.cal[3]);
-	printf("Califcacion 5: ");
-	scanf("%f",&a1.cal[4]);
-	p1=a1.cal[0]+a1.cal[1]+a1.cal[2]+a1.cal[3]+a1.cal[4];
-	p1=p1/5;
-	printf("El promedio de %s es de %.2f\n",a1.nombre,p1);
-	printf("\nIngrese 1 si desea continuar de lo contrario ingrese 0: \n");
-	scanf("%d",&x);
-	if(p1>may){
-		may=p1;
-	}
-	}while(x==1);
-	printf("\nEl estudiante con el mayor promedio es de: %.2f",may);
+	int numero, fal=1;
+	printf("\nActiviad 1\n");
+	while(fal==1){
+		printf("Ingrese un numero: \n");
+		scanf("%d",&numero);
+		while(numero<0){
+			printf("Valor invalido vuelva a ingresar otro digito: ");
+			scanf("%d",&numero);
+		}
+		primo(numero);
+		printf("\nDesea continuar ingrese 1 si no ingrese 0 ");
+		scanf("%d",&fal);
 	
-	
-	/******************************************************ACTIVIDAD 2*********************************/
-	int xx,p,puede,n1,bebe;
-	printf("\nACTIVIDAD 2\n");
-	leerpanda();
-	xx=Edadpanda(p);
-	printf("La edad del panda es: %d",x);
-	bebe=Tenerbebes(n1);
-	printf("%d",bebe);
+}
+	int base, exponente;
+	printf("\nACTIVIDAD 2\n");	
+	printf("La Base es: ");
+	scanf("%d", &base);
+	 while (base<0){
+	printf("El valor debe ser mayor que cero vuelva a ingresar: \n");
+	scanf("%d", &base);
+	 }
+	printf("El Exponente es: ");
+	scanf("%d", &exponente);
+	printf("\n%d elevado a %d es %ld\n", base, exponente, potencia(base,exponente));
 	getch();
 	return 0;
-	getch();
-	return 0;
-}
-
-
-void leerpanda(){
-	struct pandas a2;
-	printf("El panda se llama: ");
-	scanf("%s",a2.nombre);
-	printf("El peso es de: ");
-	scanf("%f",&a2.peso);
-	printf("El anio de nacimiento es: ");
-	scanf("%d",&a2.anio);
-	a=a2.anio;
-	printf("Sexo: ");
-	scanf("%s",a2.sexo);
-	
-
-}
-
-int Edadpanda(p){
-	struct pandas a2;
-	int edadp;
-	edadp=2019-a;
-	return(edadp);
-}
-
-int Tenerbebes(int p){
-	int res, edad,s;
-	edad=Edadpanda(p);
-	printf("\nIngrese 0 si el panda introducido fue un macho o ingrese 1 si fue una hembra ");
-	scanf("%d",&s);
-	if(edad>=5&&(s==1)){
-		res=1;
-
 	}
-	else{
-		res=0;
 
+   void primo (int numero)
+  {
+    int i,k=0;
+    for(i=1;i<numero+1;i++)
+    if(numero%i==0)
+	{
+    		k=k+1;
 	}
-	return(res);
-}
+	if(k==2)
+	{
+		printf("El numero %d es primo",numero);
+	}
+      else
+	  {
+      	printf("El numero %d no es primo",numero);
+	  }
+  }
 
+  
+
+  long int potencia (int base, int exponente) {
+	long int sum=0, i,x;
+	sum=pow(base,exponente);
+    
+                                                                         
+	return (sum);
+ }
+  
+  
 	
 
 
