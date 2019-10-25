@@ -7,162 +7,116 @@ Fecha:06/09/2019
 Grupo: 006
 Horario: 7:00am - 9:00 am
 Matricula: 1986172
-
-
-
-
 */
-int main()
-{
-	char palabra[100];
-    int i, j, pali=1;
-    printf("\nIntroduce una cadena: \n");
-    scanf("%s",palabra);
-    j=strlen(palabra)-1;
-    for(i=0; i<strlen(palabra)/2; i++, j--) {
-        if (*(palabra+i)!=*(palabra+j)) {
-            pali = 0;
-            break;
-        }
-    }
-    if (pali){
-	
-        printf("\nEs un palindrimo\n");
-    }    
-		
-		
-    else{
-	
-        printf("\nNo es un palindrimo\n");
-    }
-		/*********************************************ACTIVIDAD 2**********************************/
-	char letras[10]={ };
-	int aa=0,bb=0,cc=0,dd=0,ee=0,ff=0,gg=0,hh=0,ii=0,jj=0,kk=0,ll=0,mm=0,nn=0,oo=0,pp=0,qq=0,rr=0,ss=0,tt=0,uu=0,vv=0,ww=0,xx=0,yy=0,zz=0;
-	i=0;
-	
-	printf("\nIngrese entre 1 a 10 caracteres\n");
-	printf("\nACTIVIDAD 2\n");
-	scanf("%s",letras);
-	for(i=0;i<10;i++){
-		switch(letras[i]){
-			case 'a': aa++; break;
-			case 'b': bb++; break;
-			case 'c': cc++; break;
-			case 'd': dd++; break;
-			case 'e': ee++; break;
-			case 'f': ff++; break;
-			case 'g': gg++; break;
-			case 'h': hh++; break;
-			case 'i': ii++; break;
-			case 'j': jj++; break;
-			case 'k': kk++; break;
-			case 'l': ll++; break;
-			case 'm': mm++; break;
-			case 'n': nn++; break;
-			case 'o': oo++; break;
-			case 'p': pp++; break;
-			case 'q': qq++; break;
-			case 'r': rr++; break;
-			case 's': ss++; break;
-			case 't': tt++; break;
-			case 'u': uu++; break;
-			case 'v': vv++; break;
-			case 'w': ww++; break;
-			case 'x': xx++; break;
-			case 'y': yy++; break;
-			case 'z': zz++; break;
-			default: break;
-		}
-	}
-if(aa>0){
-	printf("\nA: %d",aa);
-}
-if(bb>0){
-	printf("\nB: %d",bb);
-}
-if(cc>0){
-	printf("\nC: %d",cc);
-}
-if(dd>0){
-	printf("\nD: %d",dd);
-}
-if(ee>0){
-	printf("\nE: %d",ee);
-}
-if(ff>0){
-	printf("\nF: %d",ff);
-}
-if(gg>0){
-	printf("\nG: %d",gg);
-}
-if(hh>0){
-	printf("\nH: %d",hh);
-}
-if(ii>0){
-	printf("\nI: %d",ii);
-}
-if(jj>0){
-	printf("\nJ: %d",jj);
-}
-if(kk>0){
-	printf("\nK: %d",kk);
-}
-if(ll>0){
-	printf("\nL: %d",ll);
-}
-if(mm>0){
-	printf("\nM: %d",mm);
-}
-if(nn>0){
-	printf("\nN: %d",nn);
-}
-if(oo>0){
-	printf("\nO: %d",oo);
-}
-if(pp>0){
-	printf("\nP: %d",pp);
-}
-if(qq>0){
-	printf("\nQ: %d",qq);
-}
-if(rr>0){
-	printf("\nR: %d",rr);
-}
-if(ss>0){
-	printf("\nS: %d",ss);
-}
-if(tt>0){
-	printf("\nT: %d",tt);
-}
-if(uu>0){
-	printf("\nU: %d",uu);
-}
-if(vv>0){
-	printf("\nV: %d",vv);
-}
-if(ww>0){
-	printf("\nW: %d",ww);
-}
-if(xx>0){
-	printf("\nX: %d",xx);
-}
-if(yy>0){
-	printf("\nY: %d",yy);
-}
-if(zz>0){
-	printf("\nZ: %d",zz);
-}
 
+
+struct estudiante{
+	char nombre[40];
+	char sexo[20];
+	int edad;
+	float cal[4];
+};
+
+struct pandas{
+	char nombre[100];
+	float peso;
+	int anio;
+	char sexo[100];
+};
+
+void leerpanda();
+int Edadpanda(int p);
+int Tenerbebes(int p);
+int a;
+
+int main(){
+	int x;
+	char y[60];
+	float p1,may=0;
+	printf("\nACTIVIDAD 1\n");
+	do{
+	struct estudiante a1;
+	printf("Nombre: ");
+	scanf("%s",a1.nombre);
+	printf("Sexo: ");
+	scanf("%s",a1.sexo);
+	printf("Edad: ");
+	scanf("%d",&a1.edad);
+	printf("Califcacion 1: ");
+	scanf("%f",&a1.cal[0]);
+	printf("Califcacion 2: ");
+	scanf("%f",&a1.cal[1]);
+	printf("Califcacion 3: ");
+	scanf("%f",&a1.cal[2]);
+	printf("Califcacion 4: ");
+	scanf("%f",&a1.cal[3]);
+	printf("Califcacion 5: ");
+	scanf("%f",&a1.cal[4]);
+	p1=a1.cal[0]+a1.cal[1]+a1.cal[2]+a1.cal[3]+a1.cal[4];
+	p1=p1/5;
+	printf("El promedio de %s es de %.2f\n",a1.nombre,p1);
+	printf("\nIngrese 1 si desea continuar de lo contrario ingrese 0: \n");
+	scanf("%d",&x);
+	if(p1>may){
+		may=p1;
+	}
+	}while(x==1);
+	printf("\nEl estudiante con el mayor promedio es de: %.2f",may);
 	
 	
+	/******************************************************ACTIVIDAD 2*********************************/
+	int xx,p,puede,n1,bebe;
+	printf("\nACTIVIDAD 2\n");
+	leerpanda();
+	xx=Edadpanda(p);
+	printf("La edad del panda es: %d",x);
+	bebe=Tenerbebes(n1);
+	printf("%d",bebe);
+	getch();
+	return 0;
 	getch();
 	return 0;
 }
 
 
-
-
+void leerpanda(){
+	struct pandas a2;
+	printf("El panda se llama: ");
+	scanf("%s",a2.nombre);
+	printf("El peso es de: ");
+	scanf("%f",&a2.peso);
+	printf("El anio de nacimiento es: ");
+	scanf("%d",&a2.anio);
+	a=a2.anio;
+	printf("Sexo: ");
+	scanf("%s",a2.sexo);
 	
+
+}
+
+int Edadpanda(p){
+	struct pandas a2;
+	int edadp;
+	edadp=2019-a;
+	return(edadp);
+}
+
+int Tenerbebes(int p){
+	int res, edad,s;
+	edad=Edadpanda(p);
+	printf("\nIngrese 0 si el panda introducido fue un macho o ingrese 1 si fue una hembra ");
+	scanf("%d",&s);
+	if(edad>=5&&(s==1)){
+		res=1;
+
+	}
+	else{
+		res=0;
+
+	}
+	return(res);
+}
+
 	
 
 
