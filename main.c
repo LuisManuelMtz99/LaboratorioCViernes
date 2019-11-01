@@ -10,72 +10,55 @@ Horario: 7:00am - 9:00 am
 Matricula: 1986172
 */
 
-
-
-void primo(int num);
-long int potencia (int base, int exponente);
-
-
-int main(){
-	int numero, fal=1;
-	printf("\nActiviad 1\n");
-	while(fal==1){
-		printf("Ingrese un numero: \n");
-		scanf("%d",&numero);
-		while(numero<0){
-			printf("Valor invalido vuelva a ingresar otro digito: ");
-			scanf("%d",&numero);
-		}
-		primo(numero);
-		printf("\nDesea continuar ingrese 1 si no ingrese 0 ");
-		scanf("%d",&fal);
+int fc(int *);
 	
-}
-	int base, exponente;
-	printf("\nACTIVIDAD 2\n");	
-	printf("La Base es: ");
-	scanf("%d", &base);
-	 while (base<0){
-	printf("El valor debe ser mayor que cero vuelva a ingresar: \n");
-	scanf("%d", &base);
-	 }
-	printf("El Exponente es: ");
-	scanf("%d", &exponente);
-	printf("\n%d elevado a %d es %ld\n", base, exponente, potencia(base,exponente));
+int vocal( char *);
+int main(){
+	static char v[100];
+	printf("\nACTIVIDAD 1\n");
+	fflush(stdin);
+	printf("Ingrese la cadena: ");
+	gets(v);	
+	printf("El numero de vocales que tiene la cadena es: %d\n", vocal(v));
+		int A[2]={};
+		/***********************************ACTIVIDAD 2****************************************/
+	printf("\nACTIVIDAD 2\n");
+	printf("Dame el 1 digito: ");
+	scanf("%d",&A[1]);
+	printf("Dame el 2 digito: ");
+	scanf("%d",&A[2]);
+	
+	printf("\nLa suma de %d y de %d es: %d",A[1],A[2],fc(A));
 	getch();
 	return 0;
-	}
-
-   void primo (int numero)
-  {
-    int i,k=0;
-    for(i=1;i<numero+1;i++)
-    if(numero%i==0)
-	{
-    		k=k+1;
-	}
-	if(k==2)
-	{
-		printf("El numero %d es primo",numero);
-	}
-      else
-	  {
-      	printf("El numero %d no es primo",numero);
-	  }
-  }
-
-  
-
-  long int potencia (int base, int exponente) {
-	long int sum=0, i,x;
-	sum=pow(base,exponente);
-    
-                                                                         
-	return (sum);
  }
+
+int vocal( char *v){
+	int c=0;
+	while(*v)
+	{
+		
+	switch(toupper(*v)){
+		case 'A':
+       case 'E':
+       case 'I':
+       case 'O':
+       case 'U': 
+	   c++;
+	    
+     }
+     v++;
+  }
+  return c;
+}
+
   
-  
-	
-
-
-
+  int fc(int *A){
+  	int i,s=0, b, *c;
+  	for(i=1;i<=2;i++){
+  			s=s+A[i];
+	  }
+	  c=&s;
+	b=*c;
+	  return b;
+  }		
