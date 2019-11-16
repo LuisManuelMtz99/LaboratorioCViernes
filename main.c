@@ -10,96 +10,44 @@ Grupo: 006
 Horario: 7:00am - 9:00 am
 Matricula: 1986172
 */
-#define SIZE_NAME 20
-
-struct pictures{
-	char name[SIZE_NAME];
-	int date_time;
-	
-}picture_info;
-
-struct cordinates{
-	int latitude;
-	int longitude;
-}places[4];
 
 int main(){
- 	/*****************************************ACTIVIAD 1 ***********************************/
- 	int i;
- 	struct pictures pic[2];
- 	struct pictures *r;
- 	r=pic;
- 	for(i=0;i<2;i++){
- 		fflush(stdin);
- 		printf("\nIntroduce el nombre de la fotografia: ");
- 		gets((r+i)->name);
- 		printf("Introduce la fecha y la hora en numeros: ");
- 		scanf("%d",&(r+i)->date_time);
- 		
+ 	/*****************************************ACTIVIAD 1 **********************************/
+ 	FILE * flujo=fopen("Hola.txt","w");
+ 	if (flujo==NULL){
+ 		perror("Error en la apertura del archivo");
+ 		return 1;
 	 }
+	 printf("\nCambiando la cadena por PROCESADO");
+	 fputs("\nPROCESADO",flujo);
+	 fflush(flujo);
+	 fclose(flujo);
+	 printf("\nTrabajo Realizado");
+	
+	FILE* flujo1=fopen("Archivo_alreves","w+");
+		if (flujo1==NULL){
+ 		perror("Error en la apertura del archivo");
+ 		return 1;
+ 	}
+ 	printf("\nINVIRITIENDO LA CADENA");
+ 	fputs("\nODNUM ALOH",flujo1);
+ 	fflush(flujo1);
+ 	fclose(flujo1);
+	printf("\nArchivo 'Archivo_alreves' Creado Exitosamente");
+	
+	 
 	 
 	/***************************************ACTIVIDAD 2**************************************/
-	struct cordinates a,*p,*q;
-	int j,aux;
-	int A[4];
-	int B[4];
-	printf("\nACTIVIDAD 2\n");
-	places[0].latitude=200;
-	places[0].longitude=300;
-	places[1].latitude=400;
-	places[1].longitude=100;
-	places[2].latitude=100;
-	places[2].longitude=400;
-	places[3].latitude=300;
-	places[3].longitude=200;
-	p=places;
-	printf("\nOrdenado por como fueron obtenidos\n");
-	printf("\n%d %d\n%d %d\n%d %d\n%d %d\n",places[0].latitude,places[0].longitude,places[1].latitude,places[1].longitude,places[2].latitude,places[2].longitude,places[3].latitude,places[3].longitude);
-	
-	for(i=0;i<4;i++){
-		A[i]=(p+i)->latitude;
-	}
-	
-	for(i=1;i<4;i++)
-	{
-		for(j=0;j<3;j++)
-		{
-		if(A[j] > A[j+1])
-		{
-			aux=A[j];
-			A[j]=A[j+1];
-			A[j+1]=aux;
-		}
-	}
-}
-
-printf("\nOrden creciente por latitud\n");
-for(i=0;i<4;i++){
-			printf("%d\n",A[i]);
-	
-}
-printf("\nOrdenado crecientemente por Longitud\n");
-for(i=0;i<4;i++){
-		A[i]=(p+i)->longitude;
-	}
-	
-	for(i=1;i<4;i++)
-	{
-		for(j=0;j<3;j++)
-		{
-		if(A[j] > A[j+1])
-		{
-			aux=A[j];
-			A[j]=A[j+1];
-			A[j+1]=aux;
-		}
-	}
-}
-printf("\nOrden creciente por longitud\n");
-for(i=0;i<4;i++){
-			printf("%d\n",A[i]);
-}
-	
+FILE * flujo2=fopen("NUME.txt","r");
+int numero,numero2;
+ fscanf(flujo2,"a: %d y b: %d ",numero,numero2);
+ fclose(flujo2);
+	 printf("Los numeros son: %d %d",numero,numero2);
+	 printf("\nCreando un archivo de la suma de a y b");
+	 FILE *flujo3=fopen("suma.txt","w");
+	 fprintf(flujo3,"La suma es: %d",numero+numero2);
+	 printf("\nARCHIVO suma CREADO");
+	 fclose(flujo3);
 getch();
 return 0;
 }
